@@ -2,17 +2,16 @@ const redux = require('redux');
 
 // Reducer function
 const counterReducer = (state = { counter: 0 }, action) => {
-    switch (action.type) {
-        case 'INCREMENT':
-            return {
-                counter: state.counter + 1,
-            };
-        case 'DECREMENT':
-            return {
-                counter: state.counter - 10,
-            }
-        default:
-            return state;
+
+    if (action.type === 'INCREMENT') {
+        return {
+            counter: state.counter + 10,
+        }
+    }
+    else {
+        return {
+            counter: state.counter - 10
+        }
     }
 };
 
